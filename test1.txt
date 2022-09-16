@@ -1,0 +1,1 @@
+There are other ways that allow sharing a single IP address between several HTTPS servers. However, all of them have their drawbacks. One way is to use a certificate with several names in the SubjectAltName certificate field, for example, www.example.com and www.example.org. However, the SubjectAltName field length is limited.
