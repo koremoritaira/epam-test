@@ -1,2 +1,4 @@
-There are other ways that allow sharing a single IP address between several HTTPS servers. However, all of them have their drawbacks. One way is to use a certificate with several names in the SubjectAltName certificate field, for example, www.example.com and www.example.org. However, the SubjectAltName field length is limited.
+
 Another way is to use a certificate with a wildcard name, for example, *.example.org. A wildcard certificate secures all subdomains of the specified domain, but only on one level. This certificate matches www.example.org, but does not match example.org and www.sub.example.org. These two methods can also be combined. A certificate may contain exact and wildcard names in the SubjectAltName field, for example, example.org and *.example.org.
+
+It is better to place a certificate file with several names and its private key file at the http level of configuration to inherit their single memory copy in all servers:
